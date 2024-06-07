@@ -93,4 +93,52 @@ for (let i = 0; i <=15; i++) {
     drawTag(i, arr15[i]);
     
 }
+
+var checkPlace = function (evX) {
+    if (evX < 110) {
+        return 1
+    }
+    if (evX < 210) {
+        return 2
+    }
+    if (evX < 310) {
+        return 3
+    }
+    if (evX < 410) {
+        return 4
+    }
+}
 //drawTag(15, 7)
+canvas.addEventListener("click", function(e){
+    if (e.clientY < 110) {
+        // console.log("ряд 1");
+        var place = checkPlace(e.clientX)
+
+        switch (place) {
+            case 1:
+                var clickPos = 0
+                break;
+            case 2:
+                var clickPos = 1
+                break;
+            case 3:
+                var clickPos = 2
+                break;
+            case 4:
+                var clickPos = 3
+                break;
+        
+                
+        }
+
+    }  if (e.clientY > 110 && e.clientY < 210) {
+        console.log("ряд 2")
+        var place = checkPlace(e.clientX)
+    }  if (e.clientY > 210 && e.clientY < 310) {
+        console.log("ряд 3");
+        var place = checkPlace(e.clientX)
+    }  if (e.clientY > 310 && e.clientY < 410) {
+        console.log("ряд 4");
+        var place = checkPlace(e.clientX)
+    }
+})
