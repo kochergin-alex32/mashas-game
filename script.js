@@ -30,12 +30,7 @@ var drawSquare = function (x, y, val) {
 // drawSquare(200, 200, 4)
 var drawTag = function(pos, val) {
     switch(pos) {
-        // case 0:
-        //     drawSquare(0, 0, val)
-        //     break  
-        // case 1:
-        //     drawSquare(100, 0, val)
-        //     break  
+         
             case 0:
                 drawSquare(0, 0, val)
                 break  
@@ -132,13 +127,105 @@ canvas.addEventListener("click", function(e){
         }
 
     }  if (e.clientY > 110 && e.clientY < 210) {
-        console.log("ряд 2")
+        // console.log("ряд 2")
         var place = checkPlace(e.clientX)
+        switch (place) {
+            case 1:
+                var clickPos = 4
+                break;
+            case 2:
+                var clickPos = 5
+                break;
+            case 3:
+                var clickPos = 6
+                break;
+            case 4:
+                var clickPos = 7
+                break;
+        
+                
+        }
     }  if (e.clientY > 210 && e.clientY < 310) {
-        console.log("ряд 3");
+        // console.log("ряд 3");
         var place = checkPlace(e.clientX)
+        switch (place) {
+            case 1:
+                var clickPos = 8
+                break;
+            case 2:
+                var clickPos = 9
+                break;
+            case 3:
+                var clickPos = 10
+                break;
+            case 4:
+                var clickPos = 11
+                break;
+        
+                
+        }
+        
     }  if (e.clientY > 310 && e.clientY < 410) {
-        console.log("ряд 4");
+        // console.log("ряд 4");
         var place = checkPlace(e.clientX)
+        switch (place) {
+            case 1:
+                var clickPos = 12
+                break;
+            case 2:
+                var clickPos = 13
+                break;
+            case 3:
+                var clickPos = 14
+                break;
+            case 4:
+                var clickPos = 15
+                break;
+        
+                
+        }
+       
+        
+    }
+    console.log(clickPos);
+    if(arr15[clickPos -4] === 0){
+        arr15[clickPos-4] = arr15[clickPos];
+        arr15[clickPos] = 0;
+            for (let i = 0; i <=15; i++) {
+             drawTag(i, arr15[i]);
+            
+             }
+
+
+    }
+    if(arr15[clickPos +4] === 0){
+        arr15[clickPos+4] = arr15[clickPos];
+        arr15[clickPos] = 0;
+            for (let i = 0; i <=15; i++) {
+             drawTag(i, arr15[i]);
+            
+             }
+
+
+    }
+    if(arr15[clickPos +1] === 0 && clickPos !== 3 && clickPos !== 7 && clickPos !== 11){
+        arr15[clickPos+1] = arr15[clickPos];
+        arr15[clickPos] = 0;
+            for (let i = 0; i <=15; i++) {
+             drawTag(i, arr15[i]);
+            
+             }
+
+
+    }
+    if(arr15[clickPos -1] === 0 && clickPos !== 4 && clickPos !== 8 && clickPos !== 12){
+        arr15[clickPos -1] = arr15[clickPos];
+        arr15[clickPos] = 0;
+            for (let i = 0; i <=15; i++) {
+             drawTag(i, arr15[i]);
+            
+             }
+
+
     }
 })
