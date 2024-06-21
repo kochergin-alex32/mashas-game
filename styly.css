@@ -1,5 +1,6 @@
 body{
     border: 15px solid orange;
+    background-color: rgb(210, 238, 155);
 }
 .startStop-area-button{
     border: 1px solid red;
